@@ -1,2 +1,9 @@
+alembic
+faker
 flask
 gunicorn
+matplotlib
+pandas
+python-dateutil
+psycopg2
+sqlalchemy
