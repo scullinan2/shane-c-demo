@@ -73,37 +73,5 @@ def get_nonprofit_page():
     )
 
 
-def shane_c_demo():
-
-    return render_template(
-        'dashboard.html',
-        name='Cool Business Dashboard',
-        total_people_helped=total_people_helped,
-        money_saved=money_saved,
-        energy_saved=energy_saved,
-        url='/static/images/combined_savings.png',
-        url2='/static/images/energy_savings.png'
-    )
-    return render_template('dashboard.html')
-
-def shane_c_demo2():
-
-    total_people_helped = 50000
-    #money_saved         = '${:,.2f}'.format(float(db.query(func.sum(Saving.money_savings)).scalar()))
-    money_saved = 50000
-    energy_saved = 50000
-    #energy_saved        = '{:.2f}'.format(float(db.query(func.sum(Saving.energy_savings)).scalar())) + ' kwh'
-    #print(type(total_people_helped[0]))
-    return render_template(
-        'dashboard.html',
-        name='Cool Business Dashboard',
-        total_people_helped=total_people_helped,
-        money_saved=money_saved,
-        energy_saved=energy_saved,
-        url='/static/images/combined_savings.png',
-        url2='/static/images/energy_savings.png'
-    )
-    return render_template('dashboard.html')
-
 if __name__ == '__main__':
     app.run()
