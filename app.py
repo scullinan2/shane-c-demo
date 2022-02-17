@@ -50,7 +50,7 @@ def get_business_page():
         total_people_helped=metrics['total_people_helped'],
         money_saved=metrics['money_saved'],
         energy_saved=metrics['energy_saved'],
-        numbers='business numbers',
+        numbers='Business Numbers',
         chart='/static/images/savings_by_metric_by_yr.png',
         chart2='/static/images/energy_savings_program_yr.png',
         chart3='/static/images/money_savings_program_yr.png'
@@ -66,7 +66,7 @@ def get_nonprofit_page():
         total_people_helped=metrics['total_people_helped'],
         money_saved=metrics['money_saved'],
         energy_saved=metrics['energy_saved'],
-        numbers='np numbers',
+        numbers='Nonprofit Numbers',
         chart='/static/images/np_energy_savings_program_yr.png',
         chart2='/static/images/np_money_savings_program_yr.png',
         chart3=None
