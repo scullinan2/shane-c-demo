@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "DejaVu Sans", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 324px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #396377;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 324px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+table tr, th, td {
+  color: #ffffff;
+  border: 2px solid white;
+}
+
+label {
+  color: #ffffff;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <table>
+    <tr>
+        <th>Metric</th>
+        <th>Observation</th>
+    </tr>
+    <tr>
+        <td>Total People Helped</td>
+        <td>{{ total_people_helped }}</td>
+    </tr>
+    <tr>
+        <td>Money Saved</td>
+        <td>{{ money_saved }}</td>
+    </tr>
+    <tr>
+        <td>Energy Saved</td>
+        <td>{{ energy_saved }}</td>
+    </tr>
+  </table>
+  <hr></hr>
+  <form class="form-inline" action="{{ url_for('hello_world') }}" method="post">
+    <select name="metrics" id="metrics">
+      <option value="nonprofit">Nonprofit</option>
+      <option value="business">Business</option>
+    </select>
+    <button class="btn btn-primary">Go!</button>
+  </form>
+  <form action="/reset/" method="post">
+      <button name="reset" type="submit">Reset DB and Charts!</button>
+  </form>
+</form>
+</div>
+
+<div class="main">
+  <h3>Program Performance Over Time</h3>
+  {{ numbers }}
+  <br>
+  {% if chart3 != None %}
+    <img src={{ chart }} alt="Chart" height="420" width="420">
+    <img src={{ chart2 }} alt="Chart" height="420" width="420">
+    <img src={{ chart3 }} alt="Chart" height="420" width="420">
+  {% else %}
+    <img src={{ chart }} alt="Chart" height="420" width="420">
+    <img src={{ chart2 }} alt="Chart" height="420" width="420">
+  {% endif %}
+</div>
+</body>
+</html> 
